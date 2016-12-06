@@ -108,7 +108,14 @@
               },
                 parentCard.title
               ],
-              ' (' + (parentCard.status === 'closed' ? 'Archived' : parentCard.column.name) + ')'
+              ' (' + (parentCard.status === 'closed' ? 'Archived' : parentCard.column.name) + ')' +
+              HandsomeTrello.options.showCardDueDate && parentCard.due ?
+                ['span', {
+                  'class': 'handsome-trello__inheritance-due-date' + (new Date(parentCard.due) < new Date() ? ' handsome-trello__inheritance-due-date--expired' : '')
+                },
+                  '[Due: ' + (new Date(parentCard.due)).toLocaleString() + ']'
+                ]
+                : ''
             ]
           ]
       );
@@ -142,7 +149,14 @@
                   },
                     childCard.title
                   ],
-                  ' (' + (childCard.status === 'closed' ? 'Archived' : childCard.column.name) + ')'
+                  ' (' + (childCard.status === 'closed' ? 'Archived' : childCard.column.name) + ')' +
+                  HandsomeTrello.options.showCardDueDate && childCard.due ?
+                    ['span', {
+                      'class': 'handsome-trello__inheritance-due-date' + (new Date(childCard.due) < new Date() ? ' handsome-trello__inheritance-due-date--expired' : '')
+                    },
+                      '[Due: ' + (new Date(childCard.due)).toLocaleString() + ']'
+                    ]
+                    : ''
                 ],
                 childCard.children && childCard.children.length ?
                     this.generateHtmlForOneChildren(childCard.children, level + 1) :
@@ -219,7 +233,14 @@
                 },
                   relatedCard.title
                 ],
-                ' (' + (relatedCard.status === 'closed' ? 'Archived' : relatedCard.column.name) + ')'
+                ' (' + (relatedCard.status === 'closed' ? 'Archived' : relatedCard.column.name) + ')' +
+                HandsomeTrello.options.showCardDueDate && relatedCard.due ?
+                  ['span', {
+                    'class': 'handsome-trello__inheritance-due-date' + (new Date(relatedCard.due) < new Date() ? ' handsome-trello__inheritance-due-date--expired' : '')
+                  },
+                    '[Due: ' + (new Date(relatedCard.due)).toLocaleString() + ']'
+                  ]
+                  : ''
               ]
           ));
         }

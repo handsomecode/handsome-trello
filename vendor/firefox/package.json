@@ -24,6 +24,13 @@
       "description": "Show Archived Cards in children and related lists",
       "type": "bool",
       "value": true
+    },
+    {
+      "name": "showCardDueDate",
+      "title": "Show Card Due Date",
+      "description": "Show Due Date in children and related lists and parent",
+      "type": "bool",
+      "value": false
     }
   ],
   "icon": "data/icons/icon_48.png",
