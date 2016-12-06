@@ -18,12 +18,14 @@ var HandsomeTrello = {
       resizeTimeout: 100
     },
     reloadTimeout: 500,
-    updateBadgeChecklistTimeout: 500,
     notification: {
       defaultTimeout: 10000,
       messages: {
+        error: function (message) {
+          return HandsomeTrello.helpers.jsonToDOM(['span', {}, message]);
+        },
         recursionOnBoard: function (recursionCardTitle, recursionCardLink, currentCardTitle, currentCardLink) {
-          return HandsomeTrello.jsonToDOM(['span', {},
+          return HandsomeTrello.helpers.jsonToDOM(['span', {},
               ['a', {
                 'href': recursionCardLink
               },
@@ -39,7 +41,7 @@ var HandsomeTrello = {
           ]);
         },
         severalParentsOnCard: function (recursionCardTitle, recursionCardLink, currentCardTitle, currentCardLink) {
-          return HandsomeTrello.jsonToDOM(['span', {},
+          return HandsomeTrello.helpers.jsonToDOM(['span', {},
               ['a', {
                 'href': recursionCardLink
               },
@@ -67,6 +69,21 @@ var HandsomeTrello = {
         title: 'Show Archived Cards in children and related lists',
         type: 'boolean',
         value: true
+      },
+      descriptionPosition: {
+        title: 'The position of the Parent/Child block relative to the description',
+        type: 'select',
+        options: [
+          {
+            label: 'Top',
+            value: 'top'
+          },
+          {
+            label: 'Bottom',
+            value: 'bottom'
+          }
+        ],
+        value: 'bottom'
       }
     }
   }
