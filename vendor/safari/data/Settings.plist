@@ -24,5 +24,15 @@
 		<key>Type</key>
 		<string>CheckBox</string>
 	</dict>
+    <dict>
+        <key>DefaultValue</key>
+        <string>false</string>
+        <key>Key</key>
+        <string>showCardId</string>
+        <key>Title</key>
+        <string>Show Card Ids in children and related lists and parent</string>
+        <key>Type</key>
+        <string>CheckBox</string>
+    </dict>
 </array>
 </plist>

@@ -69,6 +69,11 @@ var HandsomeTrello = {
         title: 'Show Archived Cards in children and related lists',
         type: 'boolean',
         value: true
+      },
+      showCardId: {
+        title: 'Show Card Ids in children and related lists and parent',
+        type: 'boolean',
+        value: false
       }
     }
   }
