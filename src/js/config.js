@@ -74,6 +74,40 @@ var HandsomeTrello = {
         title: 'Show Card Ids in children and related lists and parent',
         type: 'boolean',
         value: false
+      },
+      descriptionPosition: {
+        title: 'The position of Parent/Siblings/Child blocks relative to the description',
+        type: 'select',
+        options: [
+          {
+            label: 'Top',
+            value: 'top'
+          },
+          {
+            label: 'Bottom',
+            value: 'bottom'
+          }
+        ],
+        value: 'bottom'
+      },
+      orderOfBlocks: {
+        title: 'The order of Parent/Siblings/Child blocks',
+        type: 'select',
+        options: [
+          {
+            label: 'Parent - Siblings - Children',
+            value: 'parent-related-children'
+          },
+          {
+            label: 'Parent - Children - Siblings',
+            value: 'parent-children-related'
+          },
+          {
+            label: 'Siblings - Parent - Children',
+            value: 'related-parent-children'
+          }
+        ],
+        value: 'parent-related-children'
       }
     }
   }
